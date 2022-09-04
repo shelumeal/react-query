@@ -6,9 +6,12 @@ const fetchHeroes = () => {
 };
 
 function RQSuperheroesPage() {
-  const { isLoading, data, isError, error } = useQuery(
+  const { isLoading, data, isError, error, isFetching } = useQuery(
     "super-heroes",
-    fetchHeroes
+    fetchHeroes,
+    {
+      staleTime: 30000,
+    }
   );
 
   if (isLoading) {
