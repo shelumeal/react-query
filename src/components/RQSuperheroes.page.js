@@ -10,7 +10,12 @@ function RQSuperheroesPage() {
     "super-heroes",
     fetchHeroes,
     {
-      staleTime: 30000,
+      // cacheTime:5000,
+      // staleTime: 30000,
+      refetchOnMount: true,
+      refetchOnWindowFocus: true,
+      // refetchInterval:2000,
+      // refetchIntervalInBackground:true
     }
   );
 
