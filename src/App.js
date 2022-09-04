@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import "./App.css";
 import HomePage from "./components/Home.page";
 import Navbar from "./components/Navbar";
@@ -17,6 +18,7 @@ function App() {
         <Route path="super-heroes" element={<SuperheroesPage />}></Route>
         <Route path="rq-super-heroes" element={<RQSuperheroesPage />}></Route>
       </Routes>
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>
   );
 }
